@@ -23,7 +23,7 @@ const countdown =
 function updateCounter()
 {
   const __d = new Date();
-  const doubleDigits = n => ( n.length == 1 ? `0${n}` : `${n}` );
+//const doubleDigits = n => ( n.length == 1 ? `0${n}` : `${n}` );
   const daysBefore = countdown.target.day - __d.getDate();
   const toGo = 
   {
