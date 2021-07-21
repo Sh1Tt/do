@@ -5,7 +5,7 @@ const countdown =
   {
     setTimeout( () =>
     {
-      updateCounter;
+      updateCounter();
     }, 
     100
     );  
@@ -17,4 +17,4 @@ function updateCounter()
   countdown.display.innerText = `${__d.getHours()} : ${__d.getMinutes()} : ${__d.getSeconds()}`;
   countdown.step();
 }
-udateCounter();
+updateCounter();
