@@ -57,29 +57,6 @@
 			</a>
 		</p>
 	</div>
-  <script type="text/javascript">
-    const countdown = 
-    {
-      display: document.body.querySelector( `#counter-display` )
-    };
-    const __d = {
-      curr: new Date()
-    }
-    function step()
-    {
-      setTimeout( () =>
-      {
-        printToDisplay();
-      },
-      1000
-      );
-    }
-    function printToDisplay()
-    {
-      countdown.display.innerText = __d.curr.getHours() + __d.curr.getMinutes() + __d.curr.getSeconds();
-      step();
-    }
-    printToDisplay();
-  </script>
+	<script src="countdown.js"></script>
 </body>
 </html>
