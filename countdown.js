@@ -19,9 +19,9 @@ function updateCounter()
     day: 24,
     month: 7
   };
-  const dayToGo = () => _birth.day - __d.getDate();
-  const hourToGo = () => dayToGo() * 24 + 24; 
-  countdown.display.innerText = `${hourToGo() - __d.getHours()} : ${60 - __d.getMinutes()} : ${60 - __d.getSeconds()}`;
+  const dayToGo = () => (_birth.day - 1) - __d.getDate();
+  const hourToGo = () => dayToGo() * 24
+  countdown.display.innerText = `${hourToGo() - __d.getHours()} : ${59 - __d.getMinutes()} : ${59 - __d.getSeconds()}`;
   countdown.step();
 }
 updateCounter();
