@@ -23,10 +23,15 @@ const countdown =
 function updateCounter()
 {
   const __d = new Date();
-  const dayToGo = () => countdown.target.day - __d.getDate();
-  const hourToGo = () => dayToGo() * 24;
-  const doubleDigits = n => ( n.length == 2 ? `0${n}` : n );
-  countdown.display.innerText = ( ( __d.getMonth() !== countdown.target.month ) || ( __d.getDate() > countdown.target.day ) ) ? countdown.state.off : `${doubleDigits( ( 23 - __d.getHours() ) + hourToGo() )} : ${doubleDigits( 59 - __d.getMinutes() )} : ${doubleDigits( 59 - __d.getSeconds() )}`;
+  const doubleDigits = n => ( n.length == 1 ? `0${n}` : n );
+  const daysBefore = countdown.target.day - __d.getDate();
+  const toGo = 
+  {
+    Hours: () => doubleDigits( ( daysBefore * 24 ) + ( 23 - __d.getHours() ) ),
+    Minutes: () => doubleDigits( 59 - __d.getMinutes() ),
+    Seconds: () => doubleDigits( 59 - __d.getSeconds() )
+  };
+  countdown.display.innerText = ( ( __d.getMonth() !== countdown.target.month ) || ( __d.getDate() > countdown.target.day ) ) ? countdown.state.off : `${toGo.Hours()} : ${toGo.Minutes()} : ${doubleDigits( 59 - __d.getSeconds() )}`;
   countdown.step();
 }
 updateCounter();
