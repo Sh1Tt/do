@@ -5,7 +5,7 @@ const countdown =
   {
     setTimeout( () =>
     {
-      updateCounter();
+      updateCounter;
     }, 
     100
     );  
