@@ -25,7 +25,8 @@ function updateCounter()
   const __d = new Date();
   const dayToGo = () => countdown.target.day - __d.getDate();
   const hourToGo = () => dayToGo() * 24;
-  countdown.display.innerText = ( ( __d.getMonth() !== countdown.target.month ) || ( __d.getDate() > countdown.target.day ) ) ? countdown.state.off : `${'0' + (23 - __d.getHours() + hourToGo() ).slice(-2)} : ${59 - __d.getMinutes()} : ${59 - __d.getSeconds()}`;
+  const doubleDigits = n => '0' + n.slice( -2 );
+  countdown.display.innerText = ( ( __d.getMonth() !== countdown.target.month ) || ( __d.getDate() > countdown.target.day ) ) ? countdown.state.off : `${doubleDigits( ( 23 - __d.getHours() ) + hourToGo() )} : ${doubleDigits( 59 - __d.getMinutes() )} : ${doubleDigits( 59 - __d.getSeconds() )}`;
   countdown.step();
 }
 updateCounter();
