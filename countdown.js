@@ -27,9 +27,9 @@ function updateCounter()
   const daysBefore = countdown.target.day - __d.getDate();
   const toGo = 
   {
-    Hours: () => ( daysBefore * 24 ) + ( 23 - __d.toLocaleTimeString('nl-NL', { hour: "2-digit" } ) ),
-    Minutes: () => __d.toLocaleTimeString('nl-NL', { minute: "2-digit" } ),
-    Seconds: () => __d.toLocaleTimeString('nl-NL', { second: "2-digit" } )
+    Hours: () => ( daysBefore * 24 ) + ( 23 - parseInt( __d.toLocaleTimeString('nl-NL', { hour: "2-digit" } ) ) ),
+    Minutes: () => 59 - parseInt( __d.toLocaleTimeString('nl-NL', { minute: "2-digit" } ) ),
+    Seconds: () => 59 - parseInt( __d.toLocaleTimeString('nl-NL', { second: "2-digit" } ) )
   };
   countdown.display.innerText = ( ( __d.getMonth() !== countdown.target.month ) || ( __d.getDate() > countdown.target.day ) ) ? countdown.state.off : `${toGo.Hours()} : ${toGo.Minutes()} : ${toGo.Seconds()}`;
   countdown.step();
