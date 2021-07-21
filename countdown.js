@@ -1,3 +1,4 @@
+const __d = new Date();
 const countdown = 
 {
   display: document.body.querySelector( `#counter-display` ),
@@ -12,12 +13,11 @@ const countdown =
   },
   state:
   {
-    Off: `Countdown will start again July ${new Date().getYear() + 1}`
+    Off: `Countdown will start again July ${__d.getYear() + 1}`
   }
 };
 function updateCounter()
 {
-  const __d = new Date();
   const _birth = 
   {
     day: 24 - 1,
