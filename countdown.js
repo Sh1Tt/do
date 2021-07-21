@@ -15,4 +15,6 @@ function updateCounter()
 {
   const __d = new Date();
   countdown.display.innerText = `${__d.getHours()} : ${__d.getMinutes()} : ${__d.getSeconds()}`;
+  countdown.step();
 }
+udateCounter();
