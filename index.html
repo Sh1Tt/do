@@ -65,27 +65,21 @@
     const __d = {
       curr: new Date()
     }
-    const step = current_time =>
+    function step()
     {
-      const new_time = current_time - 1;
-      setTimeout( new_time =>
+      setTimeout( () =>
       {
-        print( new_time );  
-        return;
+        printToDisplay();
       },
       1000
       );
     }
-    const print = display_time =>
+    function printToDisplay()
     {
-      countdown.innerText = display_time;
-      step( display_time );
+      countdown.display.innerText = __d.curr.getHours() + __d.curr.getMinutes() + __d.curr.getSeconds();
+      step();
     }
-    function start()
-    {
-      print( __d.curr.getHours() + __d.curr.getMinutes() + __d.curr.getSeconds();
-    }
-    start();
+    printToDisplay();
   </script>
 </body>
 </html>
