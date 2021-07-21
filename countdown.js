@@ -13,7 +13,7 @@ const countdown =
   },
   state:
   {
-    Off: `Countdown will start again July ${__d.getYear() + 1}`
+    Off: `Countdown will start again July ${__d.getFullYear() + 1}`
   }
 };
 function updateCounter()
