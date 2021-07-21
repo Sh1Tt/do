@@ -14,7 +14,14 @@ const countdown =
 function updateCounter()
 {
   const __d = new Date();
-  countdown.display.innerText = `${__d.getHours()} : ${__d.getMinutes()} : ${__d.getSeconds()}`;
+  const _birth = 
+  {
+    day: 24,
+    month: 7
+  };
+  const dayToGo = () => _birth.day - __d.getDate();
+  const hourToGo = () => dayToGo() * 24 + 24; 
+  countdown.display.innerText = `${hourToGo() - __d.getHours()} : ${__d.getMinutes()} : ${__d.getSeconds()}`;
   countdown.step();
 }
 updateCounter();
