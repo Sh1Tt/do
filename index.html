@@ -1,39 +1,90 @@
 <!DOCTYPE HTML>
 <html lang="en">
   <head>
-    <meta charset="utf-8">
-    <title>Do's B-day Countdown</title>
-    <style>
-      body
-      {
-        margin: 0;
-        padding: 0;
-        top: 0;
-        height: auto;
-        min-height: 100vh;
-        left: 0;
+      <meta charset="utf-8">
+      <title>Do's B-day Countdown</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+      <style type="text/css" media="screen">
+      /* Google Fonts */
+      @import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
+      /*-----------------------------------*/
+      body,td,th {
+        font-family: "Montserrat", sans-serif;
+        font-style: normal;
+        font-weight: 400;
+        color: rgba( 244, 245, 243, .99 );
+        -webkit-font-smoothing: antialiased !important;
+      }
+      html {
+        height: 100%;
         width: 100%;
-        background-color: rgba( 4, 2, 3, .99 );
-        color: rgba( 243, 245, 246, .93 );
+        background: rgba( 4, 2, 3, .93 );
+        background-image: url(./hello-world.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
       }
-      header
+      .main {
+        width: auto;
+        height: auto;
+        text-align: center;
+        margin-top: 15%;
+      }
+      h1 {
+        font-size: 72px;
+      }
+      @media screen and (max-width: 600px) {
+        body {
+          font-size: 14px;
+        }
+        h1 {
+          font-size: 32px;
+        }
+      }
+      </style>
+    </head>
+
+<body>
+	<div class="main">
+		<h1 id="counter-display"></h1>
+		<p>
+			Till dominika's birthday!
+		</p>
+		<p>
+			Powerd by 
+			<a href="github.com">
+				GitHub
+			</a>
+		</p>
+	</div>
+  <srcipt type="text/javascript">
+    const countdown = 
+    {
+      display: document.body.querySelector( `#counter-display` )
+    };
+    const __d = {
+      curr: new Date()
+    }
+    const step = current_time =>
+    {
+      const new_time = current_time - 1;
+      setTimeout( new_time =>
       {
-        display: grid;
-        align-content: center;
-        justify-content: center;
-      }
-      h1
-      {
-        
-      }
-    </style>
-  </head>
-  <body>
-    <header>
-      <h1>Dominika's B-day countdown</h1>
-      <p>blahblahblah</p>
-    </header>
-    <main></main>
-    <footer></footer>
-  </body>
+        print( new_time );  
+        return;
+      },
+      1000
+      );
+    }
+    const print = display_time =>
+    {
+      countdown.innerText = display_time;
+      step( display_time );
+    }
+    function start()
+    {
+      print( __d.curr.getHours() + __d.curr.getMinutes() + __d.curr.getSeconds();
+    }
+  </script>
+</body>
 </html>
