@@ -14,20 +14,18 @@ const countdown =
   state:
   {
     Off: `Countdown start: 1st of July ${__d.getFullYear() + 1}`
+  },
+  target:
+  {
+    day: 24,
+    month: 7
   }
 };
 function updateCounter()
 {
-  const _birth = 
-  {
-    day: 24 - 1,
-    month: 7
-  };
-  
-  
-  const dayToGo = () => _birth.day - __d.getDate();
+  const dayToGo = () => countdown.target.day - __d.getDate();
   const hourToGo = () => dayToGo() * 24;
-  countdown.display.innerText = ( ( ( __d.getMonth() + 1 ) !== _birth.month ) || ( __d.getDate() < _birth.day ) ) ? countdown.state.Off : `${23 - __d.getHours() + hourToGo()} : ${59 - __d.getMinutes()} : ${59 - __d.getSeconds()}`;
+  countdown.display.innerText = ( ( ( __d.getMonth() + 1 ) === countdown.target.month ) && ( __d.getDate() + 1 < countdown.target.day ) ) ? `${23 - __d.getHours() + hourToGo()} : ${59 - __d.getMinutes()} : ${59 - __d.getSeconds()}` : countdown.state.Off;
   countdown.step();
 }
 updateCounter();
