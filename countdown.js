@@ -7,7 +7,7 @@ const countdown =
     {
       updateCounter();
     }, 
-    1000 
+    100
     );  
   }
 };
