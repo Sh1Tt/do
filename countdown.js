@@ -12,7 +12,8 @@ const countdown =
   },
   state:
   {
-    off: `Countdown start: 1st of July ${new Date().getFullYear() + 1}`
+    off: `Countdown start: 1st of July ${new Date().getFullYear() + 1}`,
+    hit: `HAPPY BIRTHDAY <span class="hwritten">Lieve Schat! XXX</span>`
   },
   target:
   {
@@ -31,7 +32,9 @@ function updateCounter()
     Minutes: () => dd( 59 - parseInt( __d.toLocaleTimeString('nl-NL', { minute: "2-digit" } ) ) ),
     Seconds: () => dd( 59 - parseInt( __d.toLocaleTimeString('nl-NL', { second: "2-digit" } ) ) )
   };
-  countdown.display.innerHTML = ( ( __d.getMonth() !== countdown.target.month ) || ( __d.getDate() > countdown.target.day ) ) ? countdown.state.off : `${toGo.Hours()} : ${toGo.Minutes()} : ${toGo.Seconds()}`;
+  
+  countdown.display.innerHTML = ( ( __d.getMonth() !== countdown.target.month ) || ( __d.getDate() > countdown.target.day ) ) ? ( ( __d.getMonth() === countdown.target.month ) && ( ( __d.getDate() -1 ) === countdown.target.day ) ? countdown.state.hit : countdown.state.off ) : `${toGo.Hours()} : ${toGo.Minutes()} : ${toGo.Seconds()}`;
   countdown.step();
 }
+
 updateCounter();
