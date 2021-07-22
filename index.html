@@ -36,7 +36,8 @@
       }
       .main .loading
       {
-	filter: blur( 44px );      
+	filter: blur( 44px );
+	back-drop: blur( 44px ); 
       }
       .main .bg
       {
@@ -50,6 +51,8 @@
 	margin: 0;
 	object-fit: cover;
 	z-index: -1;
+	opacity: 0;
+	transition: .4s ease-in-out;
       }
       footer
       {
@@ -99,7 +102,6 @@
 		const image = _bg.getAttribute( 'data-src' );
 		_bg.addEventListener( "load", e =>
 	        {
-			_bg.style.transition = '.4s ease-in-out';
 			_bg.style.opacity = 1;
 			document.body.querySelector( `#std-out` ).classList.remove( 'loading' );
 		}
