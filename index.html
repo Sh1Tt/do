@@ -41,6 +41,12 @@
 	text-shadow: 1px 1px 17px rgba( 8, 4, 6, .97 );
 	transition: .4s ease-in-out;
       }
+      #counter-text
+      {
+	width: auto;
+	height: auto;
+	margin: 1em auto;
+      }
       footer
       {
 	width: 100%;
@@ -57,6 +63,12 @@
 	background-color: rgba( 8, 8, 8, .99 );
 	padding: .75em 1.5em;
       }
+	      
+      .glass
+      {
+	background-color: rgba( 8, 8, 8, .29 );      
+      }
+	      
 	      
       .rounded
       {
@@ -77,20 +89,18 @@
 <body>
 	<nav></nav>
 	<div id="std-out" class="main loading">
-		<h1 id="counter-display" class="solid rounded"></h1>
-		<h3>
-			Hours untill Dominika's birthday!
-		</h3>
-		
-		<footer>
-
+		<h1 id="counter-display" class=""></h1>
+		<div id="counter-text" class="glass rounded">
+			<h3>
+				Hours untill Dominika's birthday!
+			</h3>
 			<p>
 				Powerd by 
 				<a href="github.com">
 					GitHub
 				</a>
 			</p>
-		</footer>
+		</div>
 	</div>
 	<script src="countdown.js"></script>
 </body>
