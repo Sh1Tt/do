@@ -20,7 +20,7 @@
         height: 100%;
         width: 100%;
         background: rgba( 4, 2, 3, .93 );
-	/*background-image: url(./media/sam-mathews-wZjJxOx8FPI-unsplash.jpg);*/
+	background-image: url(./media/sam-mathews-wZjJxOx8FPI-unsplash.jpg);
         background-repeat: no-repeat;
         background-size: cover;
         background-position: center;
@@ -33,26 +33,6 @@
 	position: relative;
 	text-align: center;
 	text-shadow: 1px 1px 17px rgba( 8, 4, 6, .97 );
-	transition: .4s ease-in-out;
-      }
-      .main.loading
-      {
-	filter: blur( 44px );
-	back-drop: blur( 44px ); 
-      }
-      .main .bg
-      {
-	position: fixed;
-	top: 0;
-	height: auto;
-	max-height: 100%;
-	left: 0;
-	width: 100%;
-	padding: 0;
-	margin: 0;
-	object-fit: cover;
-	z-index: -1;
-	opacity: 0;
 	transition: .4s ease-in-out;
       }
       footer
@@ -85,7 +65,7 @@
 		<h3>
 			Hours untill Dominika's birthday!
 		</h3>
-		<img src="" data-src="./media/sam-mathews-wZjJxOx8FPI-unsplash.jpg" alt="fireworks background" id="page-bg" class="bg" />
+		
 		<footer>
 
 			<p>
@@ -97,18 +77,5 @@
 		</footer>
 	</div>
 	<script src="countdown.js"></script>
-	<script type="text/javascript">
-		const _bg = document.body.querySelector( `#page-bg` );
-		_bg.style.opacity = 0;
-		const image = _bg.getAttribute( 'data-src' );
-		_bg.addEventListener( "load", e =>
-	        {
-			_bg.style.opacity = 1;
-			document.body.querySelector( `#std-out` ).classList.remove( 'loading' );
-		}
-		, true
-		);
-		_bg.src = image;
-	</script>
 </body>
 </html>
