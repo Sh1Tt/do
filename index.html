@@ -57,8 +57,11 @@
 	text-align: center;      
       }
       h1 {
-	margin-top: 37.5vh;
+	margin: 37.5vh auto 0;
         font-size: 72px;
+	width: max-content;
+	display: inline-block;
+	padding: 1em 2em;
       }
       .solid
       {
@@ -67,6 +70,10 @@
       }
 	      
       .glass
+      {
+	background-color: rgba( 8, 8, 8, .29 );      
+      }
+      .dark.glass
       {
 	background-color: rgba( 8, 8, 8, .6 );      
       }
@@ -91,8 +98,8 @@
 <body>
 	<nav></nav>
 	<div id="std-out" class="main loading">
-		<h1 id="counter-display" class=""></h1>
-		<div id="counter-text" class="glass rounded">
+		<h1 id="counter-display" class="glass rounded"></h1>
+		<div id="counter-text" class="dark glass rounded">
 			<h3>
 				Hours untill Dominika's birthday!
 			</h3>
@@ -101,7 +108,7 @@
 				<a href="github.com">
 					GitHub
 				</a>
-				 and  
+				&nbsp;and&nbsp;
 				<a href="https://www.namebase.io/">
 					Namebase
 				</a>
