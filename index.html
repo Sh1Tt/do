@@ -34,6 +34,10 @@
 	text-align: center;
 	text-shadow: 1px 1px 17px rgba( 8, 4, 6, .97 );
       }
+      .main .loading
+      {
+	filter: blur( 44px );      
+      }
       .main .bg
       {
 	position: fixed;
@@ -72,7 +76,7 @@
 
 <body>
 	<nav></nav>
-	<div class="main">
+	<div id="std-out" class="main loading">
 		<h1 id="counter-display"></h1>
 		<h3>
 			Hours untill Dominika's birthday!
@@ -91,10 +95,13 @@
 	<script src="countdown.js"></script>
 	<script type="text/javascript">
 		const _bg = document.body.querySelector( `#page-bg` );
+		_bg.style.opacity = 0;
 		const image = _bg.getAttribute( 'data-src' );
 		_bg.addEventListener( "load", e =>
 	        {
-			console.log( image );	
+			_bg.style.transition = '.4s ease-in-out';
+			_bg.style.opacity = 1;
+			document.body.querySelector( `#std-out` ).classList.remove( 'loading' );
 		}
 		, true
 		);
