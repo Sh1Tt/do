@@ -52,7 +52,17 @@
 	margin-top: 37.5vh;
         font-size: 72px;
       }
-      
+      .solid
+      {
+	background-color: rgba( 8, 8, 8, .99 );
+	padding: .75em 1.5em;
+      }
+	      
+      .rounded
+      {
+	border-radius: .75em;
+      }
+	      
       @media screen and (max-width: 600px) {
         body {
           font-size: 14px;
@@ -67,7 +77,7 @@
 <body>
 	<nav></nav>
 	<div id="std-out" class="main loading">
-		<h1 id="counter-display"></h1>
+		<h1 id="counter-display" class="solid rounded"></h1>
 		<h3>
 			Hours untill Dominika's birthday!
 		</h3>
