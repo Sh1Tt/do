@@ -14,8 +14,11 @@
         font-weight: 400;
         color: rgba( 244, 245, 243, .99 );
         -webkit-font-smoothing: antialiased !important;
-	
+	overflow: hidden;
+	margin: 0;
+	max-height: 100%;
       }
+	      
       html {
         height: 100%;
         width: 100%;
@@ -24,12 +27,6 @@
         background-repeat: no-repeat;
         background-size: cover;
         background-position: center;
-      }
-      body
-      {
-	overflow: hidden;
-	margin: 0;
-	max-height: 100%;
       }
       .main {
         width: 100%;
@@ -90,6 +87,10 @@
         }
         h1 {
           font-size: 32px;
+        }
+	#counter-text
+	{
+	  font-size: 14px;	
         }
       }
       </style>
