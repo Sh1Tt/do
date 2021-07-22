@@ -90,10 +90,10 @@
 	<script src="countdown.js"></script>
 	<script type="text/javascript">
 		const _bg = document.body.querySelector( `#page-bg` );
-		const image = _bg.getAttribute( `data-src` ).value;
+		const image = _bg.getAttribute( `[data-src]` ).value;
 		_bg.addEventListener( "load", e =>
 	        {
-			console.log( e.target.getAttribute( `data-src` ).value );	
+			console.log( image );	
 		}
 		, true
 		);
