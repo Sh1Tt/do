@@ -91,8 +91,13 @@
 	<script type="text/javascript">
 		const _bg = document.body.querySelector( `#page-bg` );
 		const image = _bg.getAttribute( `data-src` ).value;
-		
-		console.log( image );
+		_bg.addEventListener( "load", e =>
+	        {
+			console.log( e.target.getAttribute( `data-src` ).value );	
+		}
+		, true
+		);
+		_bg.src = image;
 	</script>
 </body>
 </html>
